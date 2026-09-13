@@ -6,7 +6,7 @@
 #    By: smolinas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/09/13 13:19:48 by smolinas          #+#    #+#              #
-#    Updated: 2026/09/13 13:48:27 by smolinas         ###   ########.fr        #
+#    Updated: 2026/09/13 14:14:02 by smolinas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,7 +67,7 @@ test: $(NAME)
 	fi
 
 oṕen_ref:
-	@echo "Subject Ex00 References"	
+	@echo "Subject Ex00 v9 References"	
 	@echo "Article 1 "
 	xdg-open "https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point.htm
 	@echo "Article 2 "
