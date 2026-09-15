@@ -1,11 +1,11 @@
 #ifndef FIXED_HPP
-# define FIXED_HPP
+#define FIXED_HPP
 
 class Fixed
 {
 	private:
-		int	fixedPoint;
-		const static int bitsFractional = 8;
+		int	_fixedPoint;
+		const static int _bitsFractional = 8;
 	public:
 		Fixed();
 		Fixed(const Fixed& other);
