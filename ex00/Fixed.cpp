@@ -3,7 +3,7 @@
 
 Fixed::Fixed()
 {
-	Fixed::fixedPoint = 0;
+	this->fixedPoint = 0;
 	std::cout << "Default constructor called" << std::endl;
 }
 
@@ -29,13 +29,12 @@ Fixed::~Fixed()
 int Fixed::getRawBits( void ) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
-	return (42);
+	return (fixedPoint);
 }
 
 void Fixed::setRawBits( int const raw )
 {
-	(void)raw;
-	std::cout << raw << std::endl;
+	fixedPoint = raw;
 	return ;
 }
 
