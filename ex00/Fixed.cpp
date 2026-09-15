@@ -3,21 +3,21 @@
 
 Fixed::Fixed()
 {
-	this->_fixedPoint = 0;
 	std::cout << "Default constructor called" << std::endl;
+	this->_fixedPoint = 0;
 }
 
 Fixed::Fixed(const Fixed& other)
 {
-	this->_fixedPoint = other.getRawBits();
 	std::cout << "Copy constructor called" << std::endl;
+	this->_fixedPoint = other.getRawBits();
 }
 
 Fixed& Fixed::operator=(const Fixed& other)
 { 
+	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
 		this->_fixedPoint = other.getRawBits();
-	std::cout << "Copy assignment operator called" << std::endl;
 	return (*this);
 }
 
