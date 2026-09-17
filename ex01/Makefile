@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fixed
+NAME = fixed_01
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
