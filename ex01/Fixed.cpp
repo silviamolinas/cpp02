@@ -1,10 +1,12 @@
 #include <iostream>
+#include <cmath>
 #include "Fixed.hpp"
 
-Fixed::Fixed()
+const int Fixed::_bitsFractional = 8;
+
+Fixed::Fixed(): _fixedPoint(0)
 {
 	std::cout << "Default constructor called" << std::endl;
-	this->_fixedPoint = 0;
 }
 
 Fixed::Fixed(const Fixed& other)
@@ -28,7 +30,6 @@ Fixed::~Fixed()
 
 int Fixed::getRawBits( void ) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (_fixedPoint);
 }
 
@@ -38,4 +39,33 @@ void Fixed::setRawBits( int const raw )
 	return ;
 }
 
+Fixed::Fixed( const int integerInt )
+{
+	std::cout << "Int constructor called" << std::endl;
+	this->_fixedPoint = integerInt * (1 << _bitsFractional);
+}
 
+Fixed::Fixed( const float decimalFloat )
+{
+	std::cout << "Float constructor called" << std::endl;
+	this->_fixedPoint = roundf(decimalFloat * (1 << _bitsFractional));
+}
+
+float	Fixed::toFloat( void ) const
+{
+	float convertedValue;
+	convertedValue = (float)this->_fixedPoint / (1 << _bitsFractional);
+	return convertedValue;
+}
+
+int	Fixed::toInt( void ) const
+{
+	int	convertedValue;
+	convertedValue = this->_fixedPoint / (1 << _bitsFractional);
+	return convertedValue;
+}
+std::ostream& operator<<( std::ostream& out, const Fixed& fixed )
+{
+	out << fixed.toFloat();
+	return out;
+};
