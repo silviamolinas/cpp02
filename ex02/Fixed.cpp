@@ -104,6 +104,33 @@ bool Fixed::operator!=(const Fixed& other) const
 Fixed Fixed::operator+(const Fixed& other) const
 {
 	Fixed result;
-	result._fixedPoint = _fixedPoint + other._fixedPoint;ddgetRawBits();
+	result._fixedPoint = _fixedPoint + other._fixedPoint;
 	return(result);
+}
+
+Fixed Fixed::operator-(const Fixed& other) const
+{
+	Fixed result;
+	result._fixedPoint = _fixedPoint - other._fixedPoint;
+	return(result);
+}
+
+Fixed Fixed::operator*(const Fixed& other) const
+{
+	Fixed result;
+	result._fixedPoint = _fixedPoint * other._fixedPoint;
+	return(result);
+}
+
+Fixed Fixed::operator/(const Fixed& other) const
+{
+	Fixed result;
+	result._fixedPoint = _fixedPoint / other._fixedPoint;
+	return(result);
+}
+
+Fixed& Fixed::operator++( void )
+{
+
+	return(*this);
 }
